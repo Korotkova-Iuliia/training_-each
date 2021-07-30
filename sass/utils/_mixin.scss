@@ -1,0 +1,91 @@
+@function decimal-round($number, $digits: 0, $mode: round) {
+  $n: 1;
+  // $number must be a number
+  @if type-of($number) != number {
+    @warn '#{ $number } is not a number.';
+    @return $number;
+  }
+  // $digits must be a unitless number
+  @if type-of($digits) != number {
+    @warn '#{ $digits } is not a number.';
+    @return $number;
+  } @else if not unitless($digits) {
+    @warn '#{ $digits } has a unit.';
+    @return $number;
+  }
+  @if $digits > 0 {
+    @for $i from 1 through $digits {
+      $n: $n * 10;
+    }
+  }
+  @if $mode == round {
+    @return round($number * $n) / $n;
+  } @else if $mode == ceil {
+    @return ceil($number * $n) / $n;
+  } @else if $mode == floor {
+    @return floor($number * $n) / $n;
+  } @else {
+    @warn '#{ $mode } is undefined keyword.';
+    @return $number;
+  }
+}
+
+@mixin title-h2(
+  $jc: center,
+  $mb: 50px,
+  $fs: 36px,
+  $fw: 700,
+  $lh: 42px,
+  $l-space: 0.03em,
+  $t-align: center,
+  $color: var(--color-title)
+) {
+  justify-content: $jc;
+  margin-bottom: $mb;
+  font-size: $fs;
+  font-weight: $fw;
+  line-height: decimal-round($lh/$fs, 2);
+  letter-spacing: $l-space;
+  text-align: $t-align;
+  color: $color;
+}
+
+@mixin title-h3(
+  $mt: 30px,
+  $mb: 10px,
+  $fs: 14px,
+  $fw: 700,
+  $lh: 16px,
+  $l-space: 0.03em,
+  $t-transform: uppercase,
+  $t-align: left,
+  $color: var(--color-title)
+) {
+  margin-top: $mt;
+  margin-bottom: $mb;
+  font-size: $fs;
+  font-weight: $fw;
+  line-height: decimal-round($lh/$fs, 2);
+  letter-spacing: $l-space;
+  text-transform: $t-transform;
+  text-align: $t-align;
+  color: $color;
+}
+
+@mixin team-name-text(
+  $mb: 10px,
+  $fs: 16px,
+  $fw: 500,
+  $lh: 19px,
+  $l-space: 0.03em,
+  $t-align: center,
+  $color: var(--color-title)
+) {
+  margin-bottom: $mb;
+  font-size: $fs;
+  font-weight: $fw;
+  line-height: decimal-round($lh/$fs, 2);
+  letter-spacing: $l-space;
+  text-align: $t-align;
+  color: $color;
+}

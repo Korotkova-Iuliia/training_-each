@@ -1,0 +1,51 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+.list {
+  list-style: none;
+}
+.link {
+  text-decoration: none;
+}
+
+ul,
+ol {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-left: 0px;
+}
+
+body {
+  font-family: var(--main-font);
+  font-style: normal;
+  color: var(--color-txt);
+}
+
+.section {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
+.header__section,
+.hero__section {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+.section-we-do {
+  padding-top: 0;
+}
+.section-footer {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+img {
+  display: block;
+}

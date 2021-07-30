@@ -1,0 +1,31 @@
+.team {
+  background: var(--bgr-team-button-portfolio);
+
+  &__list {
+    display: flex;
+    margin-left: -30px;
+    margin-top: -30px;
+  }
+  &__item {
+    margin-left: 30px;
+    margin-top: 30px;
+
+    background: #ffffff;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+      0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 0px 0px 4px 4px;
+  }
+  &__description {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  &__title {
+    @include title-h2();
+  }
+  &__name {
+    @include team-name-text();
+  }
+  &__txt {
+    @include team-name-text($mb: 16px, $fw: 400, $color: var(--color-txt));
+  }
+}

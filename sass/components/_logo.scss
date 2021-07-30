@@ -1,0 +1,28 @@
+.logo {
+  font-family: var(--secondary-font);
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.03em;
+  text-align: left;
+  color: #000000;
+  animation-duration: 250ms;
+  animation-delay: 250ms;
+
+  &__web {
+    color: var(--color-accent);
+  }
+
+  &-header {
+    margin-right: 93px;
+  }
+
+  &-footer {
+    display: block;
+    margin-bottom: 20px;
+  }
+  &__studio {
+    color: #ffffff;
+  }
+}
